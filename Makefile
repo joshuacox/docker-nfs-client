@@ -21,7 +21,7 @@ rundocker:
 	@docker run --name=$(NAME) \
 	--cidfile="cid" \
 	-d \
-	-v /data
+	-v /data \
 	-t $(TAG)
 
 builddocker:
