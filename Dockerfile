@@ -1,4 +1,4 @@
-FROM local-jessie
+FROM luxas/raspbian
 MAINTAINER Josh Cox <josh 'at' webhosting.coop>
 
 ENV DEBIAN_FRONTEND noninteractive
