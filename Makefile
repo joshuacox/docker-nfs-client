@@ -17,11 +17,13 @@ rundocker:
 	$(eval TMP := $(shell mktemp -d --suffix=DOCKERTMP))
 	$(eval NAME := $(shell cat NAME))
 	$(eval TAG := $(shell cat TAG))
+	$(eval VOLUMES := $(shell cat VOLUMES))
 	chmod 777 $(TMP)
 	@docker run --name=$(NAME) \
 	--cidfile="cid" \
 	-d \
-	-v /data \
+	--env NFS_MOUNTS=$(NFS_MOUNTS) \
+	$(VOLUMES)
 	-t $(TAG)
 
 builddocker:

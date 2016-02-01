@@ -3,7 +3,7 @@ MAINTAINER Josh Cox <josh 'at' webhosting.coop>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG en_US.UTF-8
-ENV NFS_MOUNT 192.168.0.11:/example /data
+ENV NFS_MOUNTS mount -t nfs -o proto=tcp,port=2049 192.168.0.11:/example /data
 
 RUN apt-get -qq update; \
 apt-get -qqy dist-upgrade ; \
